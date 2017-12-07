@@ -1,6 +1,6 @@
 var http = require("http");
 var fs = require("fs");
-var createHandler = require("node-github-webhook");
+var createHandler = require("github-webhook-handler");
 var spawn = require("child_process").spawn;
 
 var handlerPromse = new Promise(resolve => {
@@ -9,10 +9,8 @@ var handlerPromse = new Promise(resolve => {
     resolve(data);
   });
 }).then(lordSecret => {
-  return createHandler([
-    // multiple handlers
-    { path: "/lord", secret: lordSecret }
-  ]);
+  console.log("lordSecret:"+ lordSecret);
+  return createHandler({ path: "/lord", secret: lordSecret });
 });
 
 http
