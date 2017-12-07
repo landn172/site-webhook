@@ -1,0 +1,23 @@
+{
+  "name": "site-webhook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landn172/site-webhook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/landn172/site-webhook/issues"
+  },
+  "homepage": "https://github.com/landn172/site-webhook#readme",
+  "dependencies": {
+    "node-github-webhook": "^1.0.7"
+  }
+}
