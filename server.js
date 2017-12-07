@@ -1,6 +1,6 @@
 var http = require("http");
 var fs = require("fs");
-var createHandler = require("github-webhook-handler");
+var createHandler = require("./github-webhook-handler.js");
 var spawn = require("child_process").spawn;
 
 var handlerPromse = new Promise(resolve => {
@@ -16,6 +16,7 @@ var handlerPromse = new Promise(resolve => {
 http
   .createServer(function(req, res) {
     handlerPromse.then(handler => {
+
       handler(req, res, function(err) {
         res.statusCode = 404;
         res.end("no such location");
